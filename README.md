@@ -1,1 +1,1 @@
-#[ModKit Wiki](../../wiki)
+# ktane-necronomicon
