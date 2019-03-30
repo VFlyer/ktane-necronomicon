@@ -428,7 +428,7 @@ public class necronomiconScript : MonoBehaviour
 
 		for(int i = 0; i <= place; i++)
 		{
-			if(validChapters.Exists(x => x == priority[god.index][i]))
+			if(!found && validChapters.Exists(x => x == priority[god.index][i]))
 			{
 				correctPage = Array.FindIndex<int>(selectedChapters, x => x == priority[god.index][i]) + 1;
 				found = true;
