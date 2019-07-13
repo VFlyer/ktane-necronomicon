@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using rnd = UnityEngine.Random;
 
 public class GreatOldOne {
 
@@ -11,8 +12,6 @@ public class GreatOldOne {
 	public String coverTextClean;
 	public String coverTextTranlation;
 	public int coverTextType;
-
-	static System.Random rnd = new System.Random();
 
 	static Dictionary<int, String> nameDecoder = new Dictionary<int, String>
 	{
@@ -76,7 +75,7 @@ public class GreatOldOne {
 
 	public GreatOldOne()
 	{
-		index = rnd.Next() % 8;
+		index = rnd.Range(0, 8);
 
 		String[] coverTexts, coverTextsClean, translations;
 		int[] types;
@@ -87,7 +86,7 @@ public class GreatOldOne {
 		translationDecoder.TryGetValue(index, out translations);
 		typeDecoder.TryGetValue(index, out types);
 
-		int pos = rnd.Next() % coverTexts.Length;
+		int pos = rnd.Range(0, coverTexts.Length);
 
 		coverText = coverTexts[pos];
 		coverTextClean = coverTextsClean[pos];
