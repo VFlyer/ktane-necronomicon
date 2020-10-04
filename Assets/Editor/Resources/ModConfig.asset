@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Name: ModConfig
   m_EditorClassIdentifier: 
   id: necronomicon
-  title: The Necronomicon
-  description: "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.\n\nModule by TheThirdMan\nmoduleID:
-    necronomicon\n\nGitHub Repository: https://github.com/luisdiogo98/ktane-necronomicon\n\r\nManual
-    HTML: https://ktane.timwi.de/HTML/The%20Necronomicon.html\r\nManual PDF: https://ktane.timwi.de/PDF/The%20Necronomicon.pdf\r\n\nAny
+  title: The Necronomicon [REUPLOAD]
+  description: "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.\n\n[b]This is
+    a reupload of a module by the original author, please unsubscribe/diable the older
+    version [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1688518678]here.[/url][/b]\n\nModule
+    by TheThirdMan\nmoduleID: necronomicon\n\nGitHub (Legacy Version): https://github.com/luisdiogo98/ktane-necronomicon\nGitHub
+    (Reupload Version): https://github.com/VFlyer/ktane-necronomicon\n\r\nManual HTML:
+    https://ktane.timwi.de/HTML/The%20Necronomicon.html\r\nManual PDF: https://ktane.timwi.de/PDF/The%20Necronomicon.pdf\r\n\nAny
     problems/suggestions, feel free to contact me on the KTaNE Discord @TheThirdMan.
     Join the KTaNE Discord here: https://discord.gg/Fv7YEDj\n\nStringly suggest to
     be played alongside Hex's Camera Zoom module. Find it here: https://steamcommunity.com/sharedfiles/filedetails/?id=838110334"
-  version: 1.2
+  version: 1.2_01
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 2c179cdcfc43a3148acec6dc072b27d6, type: 3}

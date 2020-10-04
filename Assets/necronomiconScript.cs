@@ -81,9 +81,9 @@ public class necronomiconScript : MonoBehaviour
 		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The book's place of origin is {1}.", moduleId, GetPlaceOfOrigin());
 		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The cover's expression is {1} (translated: {2}) [{3}].", moduleId, god.coverTextClean, god.coverTextTranlation, GetType(god.coverTextType));
 		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The worshiped Great Old One is {1}.", moduleId, god.name);
-		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The chapters present are {1}.", moduleId, String.Join(",", selectedChapters.Select(p => p.ToString()).ToArray()));		
-		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The valid chapters are {1}.", moduleId, String.Join(",", validChapters.ToArray().Select(p => p.ToString()).ToArray()));
-		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The chapter priority is {1}.", moduleId, String.Join(",", priorityOrder.ToArray().Select(p => p.ToString()).ToArray()));
+		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The chapters present are {1}.", moduleId, string.Join(",", selectedChapters.Select(p => p.ToString()).ToArray()));		
+		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The valid chapters are {1}.", moduleId, string.Join(",", validChapters.ToArray().Select(p => p.ToString()).ToArray()));
+		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The chapter priority is {1}.", moduleId, string.Join(",", priorityOrder.ToArray().Select(p => p.ToString()).ToArray()));
 		UnityEngine.Debug.LogFormat("[The Necronomicon #{0}] The correct chapter is {1} (page {2}).", moduleId, selectedChapters[correctPage - 1], correctPage);
 	}
 	
@@ -127,7 +127,7 @@ public class necronomiconScript : MonoBehaviour
 		else
 		{
 			lastUpdatedPage = currentPage;
-			watch = System.Diagnostics.Stopwatch.StartNew();
+			watch = Stopwatch.StartNew();
 		}
 	}
 
@@ -361,7 +361,7 @@ public class necronomiconScript : MonoBehaviour
 		}
 	}
 
-	String GetPlaceOfOrigin()
+	string GetPlaceOfOrigin()
 	{
 		switch(place)
 		{
@@ -390,7 +390,7 @@ public class necronomiconScript : MonoBehaviour
 		return "";
 	}
 
-	String GetType(int type)
+	string GetType(int type)
 	{
 		switch(type)
 		{
@@ -429,7 +429,7 @@ public class necronomiconScript : MonoBehaviour
 		{
 			if(!found && validChapters.Exists(x => x == priority[god.index][i]))
 			{
-				correctPage = Array.FindIndex<int>(selectedChapters, x => x == priority[god.index][i]) + 1;
+				correctPage = Array.FindIndex(selectedChapters, x => x == priority[god.index][i]) + 1;
 				found = true;
 			}
 
@@ -440,7 +440,7 @@ public class necronomiconScript : MonoBehaviour
 		{
 			if(!found && validChapters.Exists(x => x == priority[i][place]))
 			{
-				correctPage = Array.FindIndex<int>(selectedChapters, x => x == priority[i][place]) + 1;
+				correctPage = Array.FindIndex(selectedChapters, x => x == priority[i][place]) + 1;
 				found = true;
 			}
 			
@@ -451,7 +451,7 @@ public class necronomiconScript : MonoBehaviour
 		{
 			if(!found && validChapters.Exists(x => x == priority[i][place]))
 			{
-				correctPage = Array.FindIndex<int>(selectedChapters, x => x == priority[i][place]) + 1;
+				correctPage = Array.FindIndex(selectedChapters, x => x == priority[i][place]) + 1;
 				found = true;
 			}
 
@@ -459,7 +459,7 @@ public class necronomiconScript : MonoBehaviour
 		}
 
 		if(!found)
-			correctPage = Array.FindIndex<int>(selectedChapters, x => x == validChapters[0]) + 1;
+			correctPage = Array.FindIndex(selectedChapters, x => x == validChapters[0]) + 1;
 	}
 
 	IEnumerator OpenBookAnim()
@@ -490,7 +490,7 @@ public class necronomiconScript : MonoBehaviour
 			yield return new WaitForSeconds(0.05f);
 		}
 
-		StartCoroutine("CloseCoverAnim");
+		yield return CloseCoverAnim();
 
 		currentPage = 0;
 
